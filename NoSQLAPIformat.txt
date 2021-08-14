@@ -1,0 +1,49 @@
+NoSQL APIs JSON format
+
+For Insert:
+
+    {
+        "story_id" : "1",
+        "story_description" : "Testing database entry for NoSQL",
+        "story_related_pics" : ["https://github.com/DeepakVelmurugan/deepNets/blob/main/deepNets.png"],
+        "story_comments" : {"test_user1|2021:07:30 06:50:30" : "be sure to test properly"}
+    }
+
+
+For Update:
+
+        {
+            "story_id" : "1",
+            "field_updated": "story_related_pics”,
+            "new_value" : "https://github.com/DeepakVelmurugan/deepNets/blob/main/deepNets.png" 
+        }
+        {
+            "story_id" : "1",
+            "field_updated": "story_description",
+            "new_value" : "updated description" 
+        }
+        {
+            "story_id" : "1",
+            "field_updated": "story_comments”,
+            "new_value" : {"test_user1|2021:07:30 06:50:30" : “updated comment” }
+        }
+
+For Delete:
+
+        {
+            "story_id" : "1",
+            "field_delete": "story_comments",
+            "delete_value" : {"test_user1|2021:07:30 06:50:30" : "updated comment third time" }
+        }
+
+        {
+            "story_id" : "1",
+            "field_delete": "story_related_pics",
+            "delete_value" : "https://github.com/karpathy/minGPT/blob/master/mingpt.jpg"
+        }
+
+For Select:
+
+Methods : GET
+Headers: 
+story_id : 1
