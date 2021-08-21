@@ -6,7 +6,7 @@ node{
            sh "${ec2ip} sudo yum install git-all -y"
            sh "${clone}"
            sh "${ec2ip} git --git-dir=proManageNoSQL/.git pull"
-           sh '''${ec2ip} find . -maxdepth 1 -type f -exec mv {} proManageNoSQL \\;'''
+           sh "${ec2ip}  mv * proManageNoSQL || echo Cannot copy directory"
        }
     }
     stage('Build docker image'){
