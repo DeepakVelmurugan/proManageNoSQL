@@ -5,7 +5,7 @@ node{
            def clone = "${ec2ip} cd proManageNoSQL || ${ec2ip} git clone https://github.com/DeepakVelmurugan/proManageNoSQL.git;"
            sh "${ec2ip} sudo yum install git-all -y"
            sh "${clone}"
-           sh "${ec2ip} cd proManageNoSQL/ ${ec2ip} git pull"
+           sh "${ec2ip} git --git-dir=proManageNoSQL/.git pull"
        }
     }
     stage('Build docker image'){
