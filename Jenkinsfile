@@ -1,5 +1,5 @@
 node{
-    def ec2ip = "ssh -o  StrictHostKeyChecking=no ec2-user@13.127.68.50"
+    def ec2ip = "ssh -o  StrictHostKeyChecking=no ec2-user@3.108.184.126"
     stage('Git pull'){
        sshagent(['ec2-user']) {
            def clone = "${ec2ip} cd proManageNoSQL || ${ec2ip} git clone https://github.com/DeepakVelmurugan/proManageNoSQL.git;"
@@ -21,7 +21,7 @@ node{
             withCredentials([usernamePassword(credentialsId: 'dockerCred', passwordVariable: 'dockerpwd', usernameVariable: 'deepakvelmurugan')]) {
                 sh "${ec2ip} docker login -u ${deepakvelmurugan} -p ${dockerpwd}"
             }
-            sh '${ec2ip} docker push deepakvelmurugan/promanagenosql'
+            sh "${ec2ip} docker push deepakvelmurugan/promanagenosql"
         }
     }
     stage('Run Container on DEV server'){
