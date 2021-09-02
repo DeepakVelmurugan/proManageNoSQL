@@ -13,6 +13,3 @@ This connects to DynamoDB in AWS and REST API calls are made for basic CRUD oper
 
 For API details you can refer this file: [Link](https://github.com/DeepakVelmurugan/proManageNoSQL/blob/main/NoSQLAPIformat.txt)
 
-![devOps_logo](https://github.com/DeepakVelmurugan/proManageNoSQL/blob/main/png-transparent-cloud-symbol-devops-business-process-software-development-process-software-deployment-information-technology-implementation-cloud-computing.png)
-
-
